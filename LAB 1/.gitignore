@@ -1,0 +1,7 @@
+*.dsym
+*.exe
+*.app
+*.dmg
+*.sh
+.vscode
+
