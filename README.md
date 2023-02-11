@@ -1,4 +1,5 @@
 Hello,
+
 My name is Mayank Tiwari and I'm the creator of the repository "collegeprojects".
 
 I've a passion for programming and want to explore the world of programming and development.
@@ -13,4 +14,5 @@ So if you're looking for a place to share ideas about technology and development
 Thanks again for following along, and I look forward to getting to know you all!
 
 Farewell
+
 Mayank Tiwari
