@@ -1,3 +1,4 @@
+// sum of digits using recursion
 #include<stdio.h>
 #include<math.h>
 
