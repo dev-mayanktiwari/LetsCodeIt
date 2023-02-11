@@ -16,5 +16,5 @@ int main() {
     int x;
     printf("Please input a number\n");
     scanf("%d",&x);
-    digits(x);
+    digits(x); 
 }
