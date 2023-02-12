@@ -1,8 +1,2 @@
-*.exe
-*.exec
-*.DS_Store
-*.out
-*.sh
-*.pl
 *
 !*.c
