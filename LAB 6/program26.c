@@ -1,51 +1,55 @@
-// program to merge two sorted array
-// I am using GAP algorithm you can use algorithm you want
 #include<stdio.h>
-#include<math.h>
 
-void merge (int nums1[], int nums2[], int m, int n) {
-   int i,j, temp, x;
-   int gap=ceil((m+n)/2);
-   int nums3[m+n];
-   for (i=0;i<m;i++) {
-        nums3[i]=nums1[i];
-   } 
-   for(j=0,x=m; j<n, x<(m+n); j++,x++) {
-        nums3[x]=nums2[j];
-   }
-   while(gap>=1){
-        for (i=0;i<(m+n);i++){
-            while(i+gap<m+n){
-                if(nums3[i]>nums3[i+gap]){
-                temp=nums3[i];
-                nums3[i]=nums3[i+gap];
-                nums3[i+gap]=temp;
-                }
-                else 
-                    break;
-            }
+void mergeArrays(int nums1[], int nums2[], int m, int n, int nums3[]) {
+    int i = 0, j = 0, k = 0;
+
+    // loop through both arrays until one of them is exhausted
+    while (i < m && j < n) {
+        // compare elements of both arrays
+        if (nums1[i] < nums2[j]) {
+            nums3[k++] = nums1[i++];
+        } else {
+            nums3[k++] = nums2[j++];
         }
-        gap=ceil(gap/2);
     }
-    printf("Printing merged array\n");
-    for (i=0;i<m+n;i++){
-        printf("%d\t",nums3[i]);
+
+    // add any remaining elements from the first array
+    while (i < m) {
+        nums3[k++] = nums1[i++];
+    }
+
+    // add any remaining elements from the second array
+    while (j < n) {
+        nums3[k++] = nums2[j++];
     }
 }
 
 int main() {
-    int x,y,i;
-    printf("Enter the size of two arrays separated with spaces\n");
-    scanf("%d" "%d", &x, &y);
-    int array1[x];
-    int array2[y];
-    printf("Enter the sorted array 1 with spaces\n");
-    for (i=0;i<x;i++){
-        scanf("%d",&array1[i]);
+    int m, n, i;
+    printf("Enter the size of the first sorted array: ");
+    scanf("%d", &m);
+    int nums1[m];
+    printf("Enter the elements of the first sorted array: \n");
+    for (i = 0; i < m; i++) {
+        scanf("%d", &nums1[i]);
     }
-    printf("Enter the elements of array 2 separated with spaces\n");
-    for (i=0;i<y;i++){
-        scanf("%d",&array2[i]);
+
+    printf("Enter the size of the second sorted array: ");
+    scanf("%d", &n);
+    int nums2[n];
+    printf("Enter the elements of the second sorted array: \n");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &nums2[i]);
     }
-    merge(array1, array2, x, y);
+
+    int nums3[m + n];
+    mergeArrays(nums1, nums2, m, n, nums3);
+
+    printf("Merged sorted array: \n");
+    for (i = 0; i < m + n; i++) {
+        printf("%d ", nums3[i]);
+    }
+    printf("\n");
+
+    return 0;
 }
