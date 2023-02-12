@@ -1,2 +1,6 @@
+*.out
+*.sh
+*.pl
 *
 !*.c
+!program29.c
