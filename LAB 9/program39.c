@@ -1,34 +1,22 @@
-#include <stdio.h>
-#include <math.h>
-
-int check(int n) {
-    int i;
-    if (n <= 1) {
-        return 0;
-    }
-    for (i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-void isprime(int x, int y, FILE *t) {
-    int i;
-    int count = 0;
-    for (i = x; i <= y; i++) {
-        if (check(i)) {
-            fprintf(t, "%d\n", i);  // add a newline character after each number
-        }
-    }
-}
+#include<stdio.h>
+#include<math.h>
 
 int main() {
-    FILE *file;
-    file = fopen("primenumbers.txt", "w");
-    isprime(1, 100, file);    
-    fclose(file);
+    FILE *file1, *file2, *file3;
+    int i;
+    file1 = fopen("numbers.txt","r");
+    file2 = fopen("odd.txt","w");
+    file3 = fopen("even.txt","w");
+    while (fscanf(file1, "%d", &i)==1) {
+        if (i % 2 == 0) {
+            fprintf(file3, "%d\n", i);
+        }
+        else {
+            fprintf(file2, "%d\n", i);
+        }
+    }
+    fclose(file1);
+    fclose(file2);
+    fclose(file3);
     return 0;
 }
-
