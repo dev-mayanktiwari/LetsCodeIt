@@ -12,5 +12,9 @@ int fact(int n) {
 }
 
 int main() {
-    
+    int i, a;
+    printf("Enter a number\n");
+    scanf("%d",&i);
+    a=fact(i);
+    printf("The factorial of the given number is %d", a);
 }
