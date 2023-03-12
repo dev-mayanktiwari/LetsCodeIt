@@ -1,3 +1,4 @@
+//program to merge two sorted arrays and no element is repated 
 #include<stdio.h>
 
 void mergeArrays(int nums1[], int nums2[], int m, int n, int nums3[]) {

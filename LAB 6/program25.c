@@ -3,11 +3,13 @@
 #include<math.h>
 
 int main() {
-    int size=10;
+    int size;
+    printf("Enter the size of the array\n");
+    scanf("%d",&size);
     int array[size];
     int i,j, k;
     printf("Enter the elements of the array separated with spaces \n");
-    for (i=0; i<10; i++) {
+    for (i=0; i<size; i++) {
         scanf("%d", &array[i]);
     }
     printf("Checking for duplicated elements.....\n");

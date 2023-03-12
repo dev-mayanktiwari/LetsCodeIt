@@ -1,6 +1,7 @@
 // program to read numbers from one file and prints its square to another file
 #include<stdio.h>
 #include<math.h>
+#include<stdlib.h>
 
 int main() {
     FILE *file1, *file2;
