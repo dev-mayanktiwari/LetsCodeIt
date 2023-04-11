@@ -1,3 +1,5 @@
+// Write a program to print all the prime number, between I to 100 in file prime.txt.
+
 #include <stdio.h>
 #include <math.h>
 
